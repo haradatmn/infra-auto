@@ -34,6 +34,11 @@ defaultという名前でcentosイメージをコンテナ起動する
 -  例  
 `# docker commit default httpd`
 
+同一のリポジトリに、タグで管理する場合↓  
+`# docker commit <コンテナ名/ID> <イメージ名>:<タグ名> `  
+-  例  
+`# docker commit default centos:httpd`
+
 ## コンテナの削除
 
 `# docker rm <コンテナID>/<コンテナ名>`
