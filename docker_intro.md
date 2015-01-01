@@ -55,6 +55,8 @@ defaultという名前でcentosイメージをコンテナ起動する
 ## 参考文献
 
 http://qiita.com/gom/items/0bfc1925a7fddfcdfdaf
-http://qiita.com/mattuso/items/712575dc50513dfdf0a2
+ 
+http://qiita.com/mattuso/items/712575dc50513dfdf0a2  
+
 http://codezine.jp/article/detail/7894
 
