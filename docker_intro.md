@@ -1,5 +1,9 @@
 # Docker
 
+##　仕組み
+
+![aaaa](imgs/contener_vm.png)
+
 ## イメージを作成する
 
 - CentOSイメージを検索  
@@ -46,4 +50,11 @@ defaultという名前でcentosイメージをコンテナ起動する
 ## イメージの削除
 
 `# docker rmi <イメージ名>`
+
+
+## 参考文献
+
+http://qiita.com/gom/items/0bfc1925a7fddfcdfdaf
+http://qiita.com/mattuso/items/712575dc50513dfdf0a2
+http://codezine.jp/article/detail/7894
 
