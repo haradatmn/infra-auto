@@ -4,24 +4,24 @@
 ローカル環境からChef実行することで、リモート操作できる。  
 ※以下、ローカル環境での実行。
 
-### Knife-Soloインストール
+### 事前：Knife-Soloインストール
 `# sudo gem kenif-solo`  
 `# sudo gem berkshelf`
 
-### chefリポジトリ作成
+### 1. chefリポジトリ作成
 任意のファイルで以下を実行するとリポジトリが作成される  
 ※vagrantを使用する場合は、VagrantFileがあるフォルダで実行が適切  
 `#knife solo init .`
 
-### chefをリモートからインストール
+### 2. chefをリモートからインストール
 サーバにリモートからchef-soloをインストールする  
 `#knife solo bootstrap <ホスト名>/<IPアドレス>`
 
-### CookBook作成
+### 3. CookBook作成
 /site-cookbooks配下に作成するのがご作法。  
 `# knife cookbook create <ブック名> -o site-cookbooks`
 
-### レシピ作成
+### 4. レシピ作成
 
 site-cookbooks/<クックブック名>/recipes/default.rb
 を編集する
@@ -30,7 +30,7 @@ site-cookbooks/<クックブック名>/recipes/default.rb
        action: install
      end
 
-### CookBook実行
+### 5. CookBook実行
 
 `# knife solo cook <ホスト名>/<IPアドレス>`
 
