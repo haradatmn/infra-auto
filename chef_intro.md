@@ -1,6 +1,8 @@
 #Chef入門
 
 ## リモート作業
+ローカル環境からChef実行することで、リモート操作できる。  
+※以下、ローカル環境での実行。
 
 ### Knife-Soloインストール
 `# sudo gem kenif-solo`  
@@ -39,7 +41,8 @@ site-cookbooks/<クックブック名>/recipes/default.rb
 
 ## 参考：サーバ内作業
 以下は入門のための参考程度  
-※knife-soloを利用して、リモート環境（ローカルPC）からChef操作するのが一般的。
+※knife-soloを利用して、リモート環境（ローカルPC）からChef操作するのが一般的。  
+※以下、サーバ環境での操作
 
 ### Chef-Soloインストール
 
