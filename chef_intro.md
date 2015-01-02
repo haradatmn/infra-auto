@@ -32,7 +32,7 @@ site-cookbooks/<クックブック名>/recipes/default.rb
 
 ### CookBook実行
 
-`# chef solo cook <ホスト名>/<IPアドレス>`
+`# knife solo cook <ホスト名>/<IPアドレス>`
 
 ## 参考文献
 
