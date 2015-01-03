@@ -1,6 +1,6 @@
 #Chef入門
 
-## リモート作業
+## Chef-Solo
 ローカル環境からChef実行することで、リモート操作できる。  
 ※以下、ローカル環境での実行。
 
@@ -25,6 +25,8 @@
 
 site-cookbooks/<クックブック名>/recipes/default.rb
 を編集する
+ 
+例：dstatをインストール↓  
 
      package "dstat" do
        action: install
@@ -33,6 +35,95 @@ site-cookbooks/<クックブック名>/recipes/default.rb
 ### 5. CookBook実行
 
 `# knife solo cook <ホスト名>/<IPアドレス>`
+
+## kitchen-test + serverspec
+
+レシピのテストには、Kitchen-Testとserverspecを使う手順。
+apacheインストールのテストを参考に説明する。
+
+### 事前：CookBook&レシピ作成
+任意の場所でクックブックを作成する。  
+
+`# knife cookbook create httpd -o .`
+
+その後、レシピも作成する。  
+apacheをインストールして、起動するレシピ↓
+
+__recipes/default.rb__
+
+    package "httpd" do
+      action :install
+    end
+
+    service "httpd" do
+      action [ :enable, :start ]
+    end
+    
+    
+### 事前：Test Kitchenをインストール
+GemからTestKitchenをインストールする。
+以下のGemfileをクックブックのROOTに作成する。
+
+__Gemfile__
+
+    source 'https://rubygems.org'
+    gem 'test-kitchen', '~> 1.2.0'
+    gem 'kitchen-vagrant', :group => :integration
+    gem 'berkshelf'
+
+Gemfileを作成した、以下のコマンドを実行してインストールする
+
+`# bundle install `
+
+### 事前：Test Kitchenの初期化
+クックブックのROOTフォルダで以下のコマンドを実行する。  
+いくつかのファイル、フォルダが作成される。(.kitchen.yml, test/... などなど)
+
+`# bundle exec kitchen init`
+
+.kitchen.yumlには実行するテスト環境の情報があるため、任意で編集する。  
+
+__.kitchen.yuml__
+
+    driver:
+      name: vagrant
+
+    provisioner:
+      name: chef_solo
+    
+    platforms:
+      - name: centos-6.5
+
+    suites:
+      - name: default
+        run_list:
+          - recipe[kitchen-test::default]
+        attributes:
+
+### 1. テストコード作成(serverspec)
+serverspecでテストコードを作成する。  
+以下のフォルダに「*_spec.rb」で作成する。（フォルダが無いため、作成すること）
+
+_test/integration/default/serverspec/localhost/default_spec.rb_
+
+    require 'serverspec'
+    set :backend, :exec
+    set :path,'/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin'
+
+    describe package('httpd') do
+      it{ should be_installed }
+    end
+
+    describe service('httpd') do
+      it{ should be_enabled }
+      it{ should be_running }
+    end
+
+### 2. テスト実行
+
+クックブックのROOTフォルダで以下のコマンドを実行する。  
+
+`# bundle exec kitchen test`
 
 ## 参考文献
 
