@@ -146,8 +146,13 @@ kitchen testは以下の順でコマンド実行するのと同じ。
 
 - 今更聞けない人の為の Chef 再入門  
 http://blog.schoolwith.me/chef-re-introduction/
-
+- 
 http://hivecolor.com/id/126
+- serverspecでテストを書いた  
+http://watashideath.tumblr.com/post/70890071015/serverspec
+- 【AWS】JenkinsとserverspecでChefのテストを自動化する
+http://dev.classmethod.jp/cloud/aws/aws-jenkins-run-ec2-and-chef-cooking/
+
 
 ## 参考：サーバ内作業
 以下は入門のための参考程度  
