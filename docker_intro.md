@@ -1,4 +1,4 @@
-# Docker
+# Docker入門
 
 ##　仕組み
 
@@ -59,4 +59,7 @@ http://qiita.com/gom/items/0bfc1925a7fddfcdfdaf
 http://qiita.com/mattuso/items/712575dc50513dfdf0a2  
 
 http://codezine.jp/article/detail/7894
+
+http://www.slideshare.net/shin1x1/lt-up-33437883
+
 
