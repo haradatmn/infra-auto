@@ -119,16 +119,35 @@ _test/integration/default/serverspec/localhost/default_spec.rb_
       it{ should be_running }
     end
 
+##### serverspec v1→v2
+
+テストコードの記述方法が違うため、注意↓  
+http://serverspec.org/changes-of-v2.html
+
 ### 2. テスト実行
 
 クックブックのROOTフォルダで以下のコマンドを実行する。  
 
 `# bundle exec kitchen test`
 
+### Test Kitchenコマンド
+
+kitchen testは以下の順でコマンド実行するのと同じ。
+
+- create
+- setup
+- converge
+- verify
+- destory 
+
 ## 参考文献
 
 - Chef実践入門 - コードによるインフラ構成の自動化
 
+- 今更聞けない人の為の Chef 再入門  
+http://blog.schoolwith.me/chef-re-introduction/
+
+http://hivecolor.com/id/126
 
 ## 参考：サーバ内作業
 以下は入門のための参考程度  
