@@ -5,8 +5,8 @@
 ※以下、ローカル環境での実行。
 
 ### 事前：Knife-Soloインストール
-`# sudo gem kenif-solo`  
-`# sudo gem berkshelf`
+`# sudo gem install knife-solo`  
+`# sudo gem install berkshelf`
 
 ### 1. chefリポジトリ作成
 任意のファイルで以下を実行するとリポジトリが作成される  
@@ -146,13 +146,15 @@ kitchen testは以下の順でコマンド実行するのと同じ。
 
 - 今更聞けない人の為の Chef 再入門  
 http://blog.schoolwith.me/chef-re-introduction/
-- 
+
+- chef soloの簡単な使い方、設定方法一覧  
 http://hivecolor.com/id/126
+
 - serverspecでテストを書いた  
 http://watashideath.tumblr.com/post/70890071015/serverspec
-- 【AWS】JenkinsとserverspecでChefのテストを自動化する
-http://dev.classmethod.jp/cloud/aws/aws-jenkins-run-ec2-and-chef-cooking/
 
+- 【AWS】JenkinsとserverspecでChefのテストを自動化する  
+http://dev.classmethod.jp/cloud/aws/aws-jenkins-run-ec2-and-chef-cooking/
 
 ## 参考：サーバ内作業
 以下は入門のための参考程度  
