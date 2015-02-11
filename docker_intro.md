@@ -4,7 +4,7 @@
 
 ![aaaa](imgs/contener_vm.png)
 
-## イメージを作成する
+## イメージ作成
 
 - CentOSイメージを検索  
 `# docker search centos`
@@ -12,6 +12,12 @@
 `# docker pull centos`
 - イメージを確認  
 `# docker images`
+
+## イメージ作成
+
+```
+# docker build -t [ユーザ名]/[イメージ名] [DockerFileのパス]
+```
 
 ## コンテナ起動
 
